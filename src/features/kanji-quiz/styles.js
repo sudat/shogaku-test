@@ -5,6 +5,7 @@ export const CSS = `
 
 .kq-app{
   min-height:100vh;
+  min-height:100dvh;
   background:linear-gradient(150deg,#FFF8ED 0%,#FFE8CC 45%,#FFD6D6 100%);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:20px;font-family:'Kosugi Maru','Hiragino Kaku Gothic ProN',sans-serif;
