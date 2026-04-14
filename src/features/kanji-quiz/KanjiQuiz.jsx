@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { TOTAL } from "./constants.js";
 import { GRADE_DATA } from "./data.js";
-import { makeQuestions } from "./logic.js";
+import { makeQuestions, makeWriteQuestions } from "./logic.js";
+import { saveHistory } from "./storage.js";
 import { CSS } from "./styles.js";
 import ResultScreen from "./components/ResultScreen.jsx";
 import QuizScreen from "./components/QuizScreen.jsx";
@@ -19,7 +20,11 @@ export default function KanjiQuiz() {
 
   function startQuiz(nextMode) {
     setMode(nextMode);
-    setQuestions(makeQuestions(GRADE_DATA[grade], nextMode));
+    setQuestions(
+      nextMode === "writing"
+        ? makeWriteQuestions(GRADE_DATA[grade])
+        : makeQuestions(GRADE_DATA[grade], "both")
+    );
     setCurrent(0);
     setSelected(null);
     setScore(0);
@@ -34,12 +39,16 @@ export default function KanjiQuiz() {
 
     setSelected(choice);
 
-    if (choice === questions[current].reading) {
+    const correct = mode === "writing" ? questions[current].answer : questions[current].reading;
+    const isCorrect = choice === correct;
+    if (isCorrect) {
       setScore((currentScore) => currentScore + 1);
     }
 
     setTimeout(() => {
       if (current + 1 >= TOTAL) {
+        const newScore = isCorrect ? score + 1 : score;
+        saveHistory(grade, mode, newScore);
         setScreen("result");
         return;
       }
@@ -71,6 +80,7 @@ export default function KanjiQuiz() {
             grade={grade}
             question={question}
             selected={selected}
+            testType={mode}
             onChoiceSelect={handleChoice}
           />
         )}

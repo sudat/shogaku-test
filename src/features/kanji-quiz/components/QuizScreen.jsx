@@ -1,7 +1,7 @@
 import React from "react";
 import { CHOICE_COLORS, SHADOW_COLORS, TOTAL } from "../constants.js";
 import { GRADE_LABEL } from "../data.js";
-import { getKanjiFontSize } from "../logic.js";
+import { getKanjiFontSize, getReadingFontSize } from "../logic.js";
 
 function getChoiceState(choice, selected, correctReading) {
   if (selected === null) {
@@ -26,7 +26,11 @@ export default function QuizScreen({
   question,
   selected,
   onChoiceSelect,
+  testType = "reading",
 }) {
+  const isWriting = testType === "writing";
+  const correctAnswer = isWriting ? question.answer : question.reading;
+
   return (
     <div className="kq-card" key={animKey}>
       <div className="kq-progress">
@@ -46,13 +50,19 @@ export default function QuizScreen({
       <div className="kq-qmeta">
         {GRADE_LABEL[grade]}・{current + 1} / {TOTAL} もん
       </div>
-      <div className="kq-type">この漢字の{question.type}は？</div>
-      <div className="kq-kanji" style={{ fontSize: getKanjiFontSize(question.displayK) }}>
-        {question.displayK}
+      <div className="kq-type">
+        {isWriting ? "この漢字はどれ？" : `この漢字の${question.type}は？`}
+      </div>
+      <div className="kq-kanji" style={{
+        fontSize: isWriting
+          ? getReadingFontSize(question.display)
+          : getKanjiFontSize(question.displayK),
+      }}>
+        {isWriting ? question.display : question.displayK}
       </div>
       <div className="kq-choices">
         {question.choices.map((choice, index) => {
-          const choiceState = getChoiceState(choice, selected, question.reading);
+          const choiceState = getChoiceState(choice, selected, correctAnswer);
 
           return (
             <button
@@ -65,10 +75,10 @@ export default function QuizScreen({
               onClick={() => onChoiceSelect(choice)}
               disabled={selected !== null}
             >
-              {selected !== null && choice === question.reading && (
+              {selected !== null && choice === correctAnswer && (
                 <span className="kq-icon">✅</span>
               )}
-              {selected !== null && choice === selected && choice !== question.reading && (
+              {selected !== null && choice === selected && choice !== correctAnswer && (
                 <span className="kq-icon">❌</span>
               )}
               {choice}

@@ -23,7 +23,7 @@ describe("KanjiQuiz", () => {
     render(<KanjiQuiz />);
 
     fireEvent.click(screen.getByRole("button", { name: "3年生" }));
-    fireEvent.click(screen.getByRole("button", { name: /おんよみ/ }));
+    fireEvent.click(screen.getByRole("button", { name: /読み（よみ）/ }));
 
     expect(screen.getByText(/小学３年生・1 \/ 10 もん/)).toBeInTheDocument();
     expect(screen.getByText(/この漢字の/)).toBeInTheDocument();

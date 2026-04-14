@@ -100,3 +100,75 @@ export function getKanjiFontSize(text) {
 
   return "clamp(40px,10.5vw,54px)";
 }
+
+function getAllReadings(entry) {
+  const readings = []
+  if (entry.on) readings.push(entry.on)
+  if (entry.kun) readings.push(entry.kun.s + entry.kun.o)
+  return readings
+}
+
+export function makeWriteQuestions(data) {
+  const pool = []
+
+  for (const entry of data) {
+    const hasOn = entry.on !== null
+    const hasKun = entry.kun !== null
+
+    if (hasOn && hasKun) {
+      if (Math.random() < 0.5) {
+        pool.push({ display: entry.on, answer: entry.k, k: entry.k })
+      } else {
+        pool.push({ display: entry.kun.s + entry.kun.o, answer: entry.k, k: entry.k })
+      }
+    } else if (hasOn) {
+      pool.push({ display: entry.on, answer: entry.k, k: entry.k })
+    } else if (hasKun) {
+      pool.push({ display: entry.kun.s + entry.kun.o, answer: entry.k, k: entry.k })
+    }
+  }
+
+  const shuffledPool = shuffle(pool)
+  const usedKanji = new Set()
+  const selectedQuestions = []
+
+  for (const item of shuffledPool) {
+    if (!usedKanji.has(item.k) && selectedQuestions.length < TOTAL) {
+      usedKanji.add(item.k)
+      selectedQuestions.push(item)
+    }
+  }
+
+  return selectedQuestions.map((item) => {
+    const distractorPool = pool.filter((candidate) => {
+      if (candidate.k === item.k) return false
+      const candidateReadings = getAllReadings(data.find((e) => e.k === candidate.k))
+      return !candidateReadings.includes(item.display)
+    })
+
+    const distractorKanji = [
+      ...new Set(distractorPool.map((c) => c.k)),
+    ]
+
+    const chosenDistractors = shuffle(distractorKanji).slice(0, 3)
+
+    return {
+      display: item.display,
+      answer: item.answer,
+      k: item.k,
+      choices: shuffle([item.answer, ...chosenDistractors]),
+    }
+  })
+}
+
+export function getReadingFontSize(text) {
+  if (text.length <= 2) {
+    return "clamp(64px,17vw,86px)"
+  }
+
+  if (text.length <= 4) {
+    return "clamp(44px,12vw,58px)"
+  }
+
+  return "clamp(34px,9vw,46px)"
+}
