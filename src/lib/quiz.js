@@ -1,1 +1,1 @@
-export { TOTAL, makeQuestions } from "../../shogaku.jsx";
+export { TOTAL, makeQuestions } from "../features/kanji-quiz/index.js";
