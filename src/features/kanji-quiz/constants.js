@@ -6,13 +6,13 @@ export const SHADOW_COLORS = ["#CC5A4A", "#3A8FC7", "#4AAD60", "#CCA840"];
 export const MODE_OPTIONS = [
   {
     id: "reading",
-    label: "読み\n（よみ）",
+    label: "読み\nよみ",
     className: "kq-modeBtn-reading",
     emoji: "📖",
   },
   {
     id: "writing",
-    label: "書き\n（かき）",
+    label: "書き\nかき",
     className: "kq-modeBtn-writing",
     emoji: "✍️",
   },

@@ -49,7 +49,8 @@ export const CSS = `
 .kq-modeBtn-writing{background:linear-gradient(135deg,#34B89A,#20967D);}
 .kq-modeEmoji{font-size:22px;}
 .kq-modeName{font-size:16px;}
-.kq-modeSub{font-size:11px;opacity:.82;font-weight:400;margin-top:1px;}
+.kq-modeMain{display:block;line-height:1.15;}
+.kq-modeSub{display:block;font-size:12px;color:rgba(255,255,255,.8);font-weight:400;line-height:1.15;margin-top:2px;}
 
 .kq-card{
   background:white;border-radius:26px;padding:22px 20px 26px;

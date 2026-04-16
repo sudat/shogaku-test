@@ -38,10 +38,12 @@ export default function StartScreen({ grade, onGradeChange, onStartQuiz }) {
             <span className="kq-modeEmoji">{mode.emoji}</span>
             <div className="kq-modeName">
               {mode.label.split("\n").map((line, i) => (
-                <React.Fragment key={i}>
-                  {i > 0 && <br />}
+                <span
+                  key={i}
+                  className={i === 0 ? "kq-modeMain" : "kq-modeSub"}
+                >
                   {line}
-                </React.Fragment>
+                </span>
               ))}
             </div>
           </button>
