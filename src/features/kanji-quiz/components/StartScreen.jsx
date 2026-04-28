@@ -1,7 +1,7 @@
 import React from "react";
 import { MODE_OPTIONS } from "../constants.js";
 
-export default function StartScreen({ grade, onGradeChange, onStartQuiz }) {
+export default function StartScreen({ grade, onBackToSubjects, onGradeChange, onStartQuiz }) {
   return (
     <div style={{ width: "100%", maxWidth: 300 }}>
       <span className="kq-logo">📖</span>
@@ -49,6 +49,11 @@ export default function StartScreen({ grade, onGradeChange, onStartQuiz }) {
           </button>
         ))}
       </div>
+      {onBackToSubjects && (
+        <button className="kq-backBtn mq-subjectBack" onClick={onBackToSubjects}>
+          教科をえらぶ
+        </button>
+      )}
     </div>
   );
 }

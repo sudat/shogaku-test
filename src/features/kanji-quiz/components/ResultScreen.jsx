@@ -4,7 +4,7 @@ import { GRADE_LABEL } from "../data.js";
 import { getResultMessage, getStars } from "../logic.js";
 import { getHistory } from "../storage.js";
 
-export default function ResultScreen({ grade, mode, score, onRetry, onBack }) {
+export default function ResultScreen({ grade, mode, score, onRetry, onBack, onBackToSubjects }) {
   const history = getHistory(grade, mode);
 
   return (
@@ -32,6 +32,11 @@ export default function ResultScreen({ grade, mode, score, onRetry, onBack }) {
       <button className="kq-backBtn" onClick={onBack}>
         モードをえらぶ
       </button>
+      {onBackToSubjects && (
+        <button className="kq-backBtn mq-resultSubjectBack" onClick={onBackToSubjects}>
+          教科をえらぶ
+        </button>
+      )}
     </div>
   );
 }

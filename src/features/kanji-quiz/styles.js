@@ -125,4 +125,46 @@ export const CSS = `
   border-radius:11px;padding:9px;font-family:'Kosugi Maru',sans-serif;font-size:13px;
   cursor:pointer;display:block;
 }
+.sq-panel{width:100%;max-width:330px;}
+.sq-subjects{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;}
+.sq-subjectBtn{
+  min-height:132px;border:none;border-radius:18px;color:white;cursor:pointer;
+  font-family:'Kosugi Maru',sans-serif;font-size:22px;font-weight:700;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .1s,box-shadow .1s;
+}
+.sq-subjectBtn:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.18);}
+.sq-kanjiBtn{background:linear-gradient(135deg,#A855F7,#8B3FE0);}
+.sq-mathBtn{background:linear-gradient(135deg,#FF9F1C,#F06A4D);}
+.sq-subjectIcon{font-size:38px;line-height:1;}
+.mq-startBtn{width:100%;justify-content:center;background:linear-gradient(135deg,#FF9F1C,#F06A4D);}
+.mq-subjectBack{margin-top:14px;background:rgba(255,255,255,.58);}
+.mq-resultSubjectBack{margin-top:8px;}
+.mq-card{text-align:center;}
+.mq-problem{
+  font-family:'Kaisei Decol','Hiragino Mincho ProN',serif;
+  font-size:clamp(42px,12vw,58px);line-height:1.1;color:#2C1A0E;
+  margin:16px 0 18px;white-space:nowrap;
+}
+.mq-answerLabel{
+  display:block;font-size:13px;font-weight:700;color:#7A4A30;margin-bottom:6px;
+}
+.mq-answerInput{
+  width:100%;height:58px;border:3px solid #FFD6A8;border-radius:15px;
+  font-family:'Kosugi Maru',sans-serif;font-size:30px;font-weight:700;
+  text-align:center;color:#2C1A0E;background:#FFF9F0;outline:none;margin-bottom:12px;
+}
+.mq-answerInput:focus{border-color:#FF9F1C;box-shadow:0 0 0 4px rgba(255,159,28,.16);}
+.mq-answerInput:disabled{opacity:.72;}
+.mq-feedback{
+  min-height:31px;font-size:18px;font-weight:700;margin-bottom:10px;
+}
+.mq-correct{color:#20967D;}
+.mq-wrong{color:#D95B4A;}
+.mq-submitBtn:disabled{opacity:.55;cursor:default;transform:none;box-shadow:0 5px 0 #D95B4A;}
+@media (max-width:360px){
+  .sq-subjects{grid-template-columns:1fr;}
+  .sq-subjectBtn{min-height:94px;}
+  .mq-problem{font-size:clamp(34px,11vw,46px);}
+}
 `;

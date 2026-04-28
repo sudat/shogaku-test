@@ -8,7 +8,7 @@ import ResultScreen from "./components/ResultScreen.jsx";
 import QuizScreen from "./components/QuizScreen.jsx";
 import StartScreen from "./components/StartScreen.jsx";
 
-export default function KanjiQuiz() {
+export default function KanjiQuiz({ onBackToSubjects }) {
   const [grade, setGrade] = useState(1);
   const [screen, setScreen] = useState("start");
   const [mode, setMode] = useState(null);
@@ -68,6 +68,7 @@ export default function KanjiQuiz() {
         {screen === "start" && (
           <StartScreen
             grade={grade}
+            onBackToSubjects={onBackToSubjects}
             onGradeChange={setGrade}
             onStartQuiz={startQuiz}
           />
@@ -92,6 +93,7 @@ export default function KanjiQuiz() {
             score={score}
             onRetry={startQuiz}
             onBack={() => setScreen("start")}
+            onBackToSubjects={onBackToSubjects}
           />
         )}
       </div>
