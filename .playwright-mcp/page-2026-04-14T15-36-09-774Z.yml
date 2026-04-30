@@ -1,0 +1,9 @@
+- generic [ref=e78]:
+  - generic [ref=e90]: 小学２年生・1 / 10 もん
+  - generic [ref=e91]: この漢字はどれ？
+  - generic [ref=e92]: はなす
+  - generic [ref=e93]:
+    - button "電" [ref=e94] [cursor=pointer]
+    - button "話" [ref=e95] [cursor=pointer]
+    - button "寺" [ref=e96] [cursor=pointer]
+    - button "新" [ref=e97] [cursor=pointer]

@@ -1,0 +1,9 @@
+- generic [ref=e57]:
+  - generic [ref=e69]: 小学３年生・1 / 10 もん
+  - generic [ref=e70]: この漢字のおんよみは？
+  - generic [ref=e71]: 歯
+  - generic [ref=e72]:
+    - button "きょう" [ref=e73] [cursor=pointer]
+    - button "おう" [ref=e74] [cursor=pointer]
+    - button "し" [ref=e75] [cursor=pointer]
+    - button "しょ" [ref=e76] [cursor=pointer]

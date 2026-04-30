@@ -1,0 +1,9 @@
+- generic [ref=e66]:
+  - generic [ref=e78]: 小学１年生・1 / 10 もん
+  - generic [ref=e79]: この漢字はどれ？
+  - generic [ref=e80]: よっつ
+  - generic [ref=e81]:
+    - button "五" [ref=e82] [cursor=pointer]
+    - button "日" [ref=e83] [cursor=pointer]
+    - button "口" [ref=e84] [cursor=pointer]
+    - button "四" [ref=e85] [cursor=pointer]

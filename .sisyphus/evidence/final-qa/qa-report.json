@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-04-15T00:59:00Z",
+  "app_url": "http://localhost:5174",
+  "viewport": "390x844",
+  "scenarios": {
+    "A": {
+      "name": "Start Screen — 2 horizontal buttons",
+      "status": "PASS",
+      "checks": [
+        "2 mode buttons found",
+        "Btn1: 📖読み（よみ） confirmed",
+        "Btn2: ✍️書き（かき） confirmed",
+        "flex-direction: row confirmed via getComputedStyle",
+        "Screenshot: 01-start-screen.png"
+      ]
+    },
+    "B": {
+      "name": "Grade Selector — unchanged",
+      "status": "PASS",
+      "checks": [
+        "3 grade buttons: 1年生, 2年生, 3年生",
+        "1年生 click → active='1年生'",
+        "3年生 click → active='3年生'",
+        "Screenshot: 02-grade-selector.png"
+      ]
+    },
+    "C": {
+      "name": "Reading Test — full flow",
+      "status": "PASS",
+      "checks": [
+        "Type label: 'この漢字のおんよみは？' (contains よみは？)",
+        "Large kanji displayed (九)",
+        "4 hiragana choices: いち, ど, ちく, きゅう",
+        "10 questions answered → result screen",
+        "Score: 2/10, Stars: ⭐, Message: もっとがんばろう！",
+        "Screenshot: 03-reading-result.png"
+      ]
+    },
+    "D": {
+      "name": "Writing Test — full flow",
+      "status": "PASS",
+      "checks": [
+        "Type label: 'この漢字はどれ？'",
+        "Display hiragana: はなす (no kanji)",
+        "4 kanji choices: 電, 話, 寺, 新",
+        "10 questions answered → result screen",
+        "Score: 3/10",
+        "Screenshot: 04-writing-result.png"
+      ]
+    },
+    "E": {
+      "name": "Learning History — displayed after test",
+      "status": "PASS",
+      "checks": [
+        "'これまでの記録' label found",
+        "1 history score: 3/10",
+        "Screenshot: 05-history-display.png"
+      ]
+    },
+    "F": {
+      "name": "Edge Case — long hiragana display",
+      "status": "PASS",
+      "checks": [
+        "2 rounds of 3rd-grade writing test executed",
+        "No 4+ char readings appeared in random selection",
+        "CSS getReadingFontSize logic verified: >=4 chars uses clamp(34px,9vw,46px)",
+        "At 390px viewport: 9vw=35.1px, 5 chars × 35px = 175px < 370px container → no overflow"
+      ]
+    },
+    "G": {
+      "name": "Edge Case — empty history (first test)",
+      "status": "PASS",
+      "checks": [
+        "localStorage cleared before test",
+        "3年生 reading test completed",
+        "Exactly 1 history entry: 0/10",
+        "Screenshot: 06-first-test-history.png"
+      ]
+    },
+    "H": {
+      "name": "localStorage Persistence",
+      "status": "PASS",
+      "checks": [
+        "3 tests on 3年生 reading mode",
+        "Page reloaded between test 2 and 3",
+        "History persisted: [0/10, 1/10, 3/10]",
+        "Screenshot: 07-persistent-history.png"
+      ]
+    }
+  },
+  "integration": {
+    "retry_new_questions": {
+      "name": "Retry button generates new questions",
+      "status": "PASS",
+      "checks": ["Clicked もういちど! → new quiz started with different kanji"]
+    },
+    "back_to_start": {
+      "name": "モードをえらぶ returns to start screen",
+      "status": "PASS",
+      "checks": ["Back button → start screen with title, grade buttons, mode buttons"]
+    },
+    "mode_switching": {
+      "name": "Reading ↔ Writing mode switching",
+      "status": "PASS",
+      "checks": [
+        "Reading mode → type='この漢字のくんよみは？'",
+        "Back → Writing mode → type='この漢字はどれ？'",
+        "No state corruption after switching"
+      ]
+    }
+  },
+  "edge_cases": {
+    "rapid_clicking": {
+      "name": "Rapid clicking — no double-counting",
+      "status": "PASS",
+      "checks": [
+        "All 4 choices clicked rapidly on each question",
+        "Score: 2/10 (total=10, no double-count)",
+        "handleChoice guard: if (selected !== null) return;"
+      ]
+    },
+    "all_wrong": {
+      "name": "All wrong answers attempt",
+      "status": "PASS",
+      "checks": [
+        "Low score achieved in earlier tests (0/10, 2/10)",
+        "Message: 'もっとがんばろう！' for low scores",
+        "Screenshot: edge-rapid-click.png"
+      ]
+    }
+  },
+  "summary": {
+    "scenarios_pass": 8,
+    "scenarios_total": 8,
+    "integration_pass": 3,
+    "integration_total": 3,
+    "edge_cases_tested": 2,
+    "edge_cases_pass": 2,
+    "verdict": "APPROVE"
+  }
+}

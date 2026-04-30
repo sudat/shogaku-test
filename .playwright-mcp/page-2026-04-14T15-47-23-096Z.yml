@@ -1,0 +1,9 @@
+- generic [ref=e25]:
+  - generic [ref=e37]: 小学３年生・1 / 10 もん
+  - generic [ref=e38]: この漢字のくんよみは？
+  - generic [ref=e39]: 申す
+  - generic [ref=e40]:
+    - button "はこ" [ref=e41] [cursor=pointer]
+    - button "やわ" [ref=e42] [cursor=pointer]
+    - button "もう" [ref=e43] [cursor=pointer]
+    - button "ふで" [ref=e44] [cursor=pointer]

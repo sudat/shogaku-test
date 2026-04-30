@@ -1,0 +1,9 @@
+- generic [ref=e25]:
+  - generic [ref=e37]: 小学１年生・1 / 10 もん
+  - generic [ref=e38]: この漢字のくんよみは？
+  - generic [ref=e39]: 先
+  - generic [ref=e40]:
+    - button "おと" [ref=e41] [cursor=pointer]
+    - button "な" [ref=e42] [cursor=pointer]
+    - button "さき" [ref=e43] [cursor=pointer]
+    - button "やっつ" [ref=e44] [cursor=pointer]

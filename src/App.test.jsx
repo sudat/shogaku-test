@@ -28,4 +28,21 @@ describe("App", () => {
 
     expect(screen.getByText(/せいかい！|こたえは/)).toBeInTheDocument();
   });
+
+  it("教科選択からスイカゲームへ進める", () => {
+    const originalGetContext = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = () => null;
+
+    try {
+      render(<App />);
+
+      fireEvent.click(screen.getByRole("button", { name: /スイカゲーム/ }));
+
+      expect(screen.getByRole("heading", { name: "スイカゲーム" })).toBeInTheDocument();
+      expect(screen.getByText("つぎ")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /教科をえらぶ/ })).toBeInTheDocument();
+    } finally {
+      HTMLCanvasElement.prototype.getContext = originalGetContext;
+    }
+  });
 });

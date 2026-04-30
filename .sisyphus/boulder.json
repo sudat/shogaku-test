@@ -1,0 +1,67 @@
+{
+  "active_plan": "/usr/local/src/dev/wsl/personal-pj/shogaku-test/.sisyphus/plans/kanji-reading-writing.md",
+  "started_at": "2026-04-14T14:46:18.120Z",
+  "session_ids": [
+    "ses_273a59e10ffehYP8rJJxdTZ4Jl",
+    "ses_27388a7ffffewdvPEAosWOzfGY",
+    "ses_27388a76dffecXulgFe5vUcYM4",
+    "ses_27388a860ffe7s8BWhxBSfeJdF",
+    "ses_27384e8c8ffeuSXrdxw9BN4cYm",
+    "ses_2738266aaffeAok1NacfSTMyEB",
+    "ses_2737e01caffeQTLFdG5LXrKJj4",
+    "ses_2737e024effeMlhDW30sIfzNL5",
+    "ses_273777f9affetPRQ7SdHV8HRcX",
+    "ses_273778486ffe9pGntPi5rCkcrh",
+    "ses_273777d07ffe9zgYAAsp7h7pM7",
+    "ses_273777e2fffe7v2rhBldis5XPR"
+  ],
+  "plan_name": "kanji-reading-writing",
+  "agent": "atlas",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "書きテスト問題生成ロジック追加",
+      "session_id": "ses_27388a860ffe7s8BWhxBSfeJdF",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-04-14T14:50:28.914Z"
+    },
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "QuizScreen書きテスト対応",
+      "session_id": "ses_27384e8c8ffeuSXrdxw9BN4cYm",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-04-14T14:54:37.004Z"
+    },
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "KanjiQuiz統合（書きモード＋履歴保存）",
+      "session_id": "ses_2738266aaffeAok1NacfSTMyEB",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-04-14T14:58:40.189Z"
+    },
+    "todo:6": {
+      "task_key": "todo:6",
+      "task_label": "6",
+      "task_title": "ResultScreen学習履歴表示",
+      "session_id": "ses_2737e024effeMlhDW30sIfzNL5",
+      "agent": "Sisyphus-Junior",
+      "category": "visual-engineering",
+      "updated_at": "2026-04-14T15:03:03.218Z"
+    },
+    "final-wave:f1": {
+      "task_key": "final-wave:f1",
+      "task_label": "F1",
+      "task_title": "**Plan Compliance Audit** — `oracle`",
+      "session_id": "ses_273777e2fffe7v2rhBldis5XPR",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-04-14T16:04:54.036Z"
+    }
+  }
+}

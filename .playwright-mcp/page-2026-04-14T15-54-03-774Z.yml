@@ -1,0 +1,21 @@
+- generic [ref=e4]:
+  - generic [ref=e5]: 📖
+  - generic [ref=e6]:
+    - generic [ref=e7]: あかりととしはるの
+    - generic [ref=e8]: かんじテスト
+  - generic [ref=e9]: 学年をえらんでスタート！
+  - generic [ref=e10]:
+    - button "1年生" [ref=e11] [cursor=pointer]
+    - button "2年生" [ref=e12] [cursor=pointer]
+    - button "3年生" [ref=e13] [cursor=pointer]
+  - generic [ref=e14]:
+    - button "📖 読み（よみ） 音読み＋訓読み" [ref=e15] [cursor=pointer]:
+      - generic [ref=e16]: 📖
+      - generic [ref=e17]:
+        - generic [ref=e18]: 読み（よみ）
+        - generic [ref=e19]: 音読み＋訓読み
+    - button "✍️ 書き（かき） 漢字をえらぶ" [ref=e20] [cursor=pointer]:
+      - generic [ref=e21]: ✍️
+      - generic [ref=e22]:
+        - generic [ref=e23]: 書き（かき）
+        - generic [ref=e24]: 漢字をえらぶ

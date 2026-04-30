@@ -1,0 +1,9 @@
+- generic [ref=e59]:
+  - generic [ref=e71]: 小学３年生・1 / 10 もん
+  - generic [ref=e72]: この漢字のおんよみは？
+  - generic [ref=e73]: 神
+  - generic [ref=e74]:
+    - button "しき" [ref=e75] [cursor=pointer]
+    - button "びょう" [ref=e76] [cursor=pointer]
+    - button "そう" [ref=e77] [cursor=pointer]
+    - button "しん" [ref=e78] [cursor=pointer]

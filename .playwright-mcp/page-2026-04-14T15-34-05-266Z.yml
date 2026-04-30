@@ -1,0 +1,9 @@
+- generic [ref=e25]:
+  - generic [ref=e37]: 小学１年生・1 / 10 もん
+  - generic [ref=e38]: この漢字のおんよみは？
+  - generic [ref=e39]: 九
+  - generic [ref=e40]:
+    - button "いち" [ref=e41] [cursor=pointer]
+    - button "ど" [ref=e42] [cursor=pointer]
+    - button "ちく" [ref=e43] [cursor=pointer]
+    - button "きゅう" [ref=e44] [cursor=pointer]

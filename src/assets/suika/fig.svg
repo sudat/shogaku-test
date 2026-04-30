@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.73 141.73">
+  <defs>
+    <radialGradient id="figBody" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#b85aa1" />
+      <stop offset="60%" stop-color="#8f3f83" />
+      <stop offset="100%" stop-color="#6c2f62" />
+    </radialGradient>
+    <radialGradient id="figInside" cx="38%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#ffd7d6" />
+      <stop offset="65%" stop-color="#f3a2ab" />
+      <stop offset="100%" stop-color="#df7d8b" />
+    </radialGradient>
+  </defs>
+  <g>
+    <path
+      d="M77.22 28.61c4.98-8.4 14.1-12.78 22.2-11.36-6.53 3.76-11.62 9.78-14.09 16.86 5.82-.44 12.03 2.14 15.82 6.45-7.16-.4-14.25 2.08-19.22 6.8-1.41-3.79-5.3-13.66-4.71-18.75Z"
+      fill="#5b8c44"
+    />
+    <path
+      d="M93.52 48.72c12.46 12.45 19.79 31.33 10.69 48.5-9.37 17.69-30.72 27.88-50.33 25.14-15.39-2.16-28.46-12.2-33.26-27.31-4.53-14.24.95-29.71 11.22-40.07 4.74-4.78 10.98-8.14 17.59-9.89 14.97-3.97 32.9-1.09 44.09 10.63Z"
+      fill="url(#figBody)"
+    />
+    <path
+      d="M84.66 56.01c8.64 8.56 13.42 20.9 8.51 32.86-5.35 13.01-19.47 20.87-33.3 19.36-9.98-1.09-19.07-6.98-23.11-16.27-4.31-9.9-1.85-21.29 5-29.35 6.85-8.07 17.59-11.97 28.08-11.31 5.39.34 10.78 2.19 14.82 4.71Z"
+      fill="url(#figInside)"
+    />
+    <path
+      d="M62.24 54.7c-4.48 2.84-8.17 7.1-10.28 11.98-2.13 4.93-2.68 10.41-1.85 15.7 1.31 8.42 6.16 16.05 13.12 20.93"
+      fill="none"
+      stroke="#f6bdc2"
+      stroke-linecap="round"
+      stroke-width="4.8"
+      opacity=".75"
+    />
+    <path
+      d="M76.75 54.12c5.41 4.12 9.54 10.1 11.06 16.82 1.58 6.98.28 14.53-3.62 20.53"
+      fill="none"
+      stroke="#f9c8cc"
+      stroke-linecap="round"
+      stroke-width="4.8"
+      opacity=".72"
+    />
+    <ellipse cx="55.44" cy="64.02" rx="9.7" ry="6.2" fill="#fff1f1" opacity=".62" transform="rotate(-28 55.44 64.02)" />
+    <circle cx="59.71" cy="70.44" r="2.2" fill="#ffe3df" />
+    <circle cx="70.61" cy="77.4" r="2.4" fill="#ffe3df" />
+    <circle cx="62.85" cy="83.65" r="2.1" fill="#ffe3df" />
+    <circle cx="79.52" cy="87.72" r="2.3" fill="#ffe3df" />
+    <circle cx="73.92" cy="94.23" r="2.1" fill="#ffe3df" />
+  </g>
+</svg>

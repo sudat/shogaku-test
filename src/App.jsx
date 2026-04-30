@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import KanjiQuiz from "./components/KanjiQuiz.jsx";
 import MathQuiz from "./features/math-quiz/index.js";
+import SuikaGame from "./features/suika-game/index.js";
 import { CSS } from "./features/kanji-quiz/styles.js";
 
 export default function App() {
@@ -20,6 +21,11 @@ export default function App() {
       {subject === "math" && (
         <div className="kq-app">
           <MathQuiz onBackToSubjects={() => setSubject(null)} />
+        </div>
+      )}
+      {subject === "suika" && (
+        <div className="kq-app">
+          <SuikaGame onBackToSubjects={() => setSubject(null)} />
         </div>
       )}
     </>
@@ -43,11 +49,19 @@ function SubjectSelect({ onSubjectSelect }) {
       <div className="sq-subjects">
         <button className="sq-subjectBtn sq-kanjiBtn" onClick={() => onSubjectSelect("kanji")}>
           <span className="sq-subjectIcon">📖</span>
-          <span>かんじ</span>
+          <span className="sq-subjectLabel">かんじ</span>
         </button>
         <button className="sq-subjectBtn sq-mathBtn" onClick={() => onSubjectSelect("math")}>
           <span className="sq-subjectIcon">🧮</span>
-          <span>さんすう</span>
+          <span className="sq-subjectLabel">さんすう</span>
+        </button>
+        <button
+          className="sq-subjectBtn sq-suikaBtn"
+          onClick={() => onSubjectSelect("suika")}
+          aria-label="スイカゲーム"
+        >
+          <span className="sq-subjectIcon">🍉</span>
+          <span className="sq-subjectLabel">スイカゲーム</span>
         </button>
       </div>
     </div>

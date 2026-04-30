@@ -1,0 +1,9 @@
+- generic [ref=e131]:
+  - generic [ref=e143]: 小学３年生・1 / 10 もん
+  - generic [ref=e144]: この漢字はどれ？
+  - generic [ref=e145]: や
+  - generic [ref=e146]:
+    - button "部" [ref=e147] [cursor=pointer]
+    - button "詩" [ref=e148] [cursor=pointer]
+    - button "屋" [ref=e149] [cursor=pointer]
+    - button "意" [ref=e150] [cursor=pointer]
